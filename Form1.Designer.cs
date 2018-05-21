@@ -31,22 +31,24 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.aplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuInicio = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuParo = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.stateLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(17, 17);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.aplicacionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(788, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(788, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -55,8 +57,14 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSalir});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(63, 21);
             this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // mnuSalir
+            // 
+            this.mnuSalir.Name = "mnuSalir";
+            this.mnuSalir.Size = new System.Drawing.Size(187, 24);
+            this.mnuSalir.Text = "Salir";
             // 
             // aplicacionToolStripMenuItem
             // 
@@ -64,26 +72,20 @@
             this.mnuInicio,
             this.mnuParo});
             this.aplicacionToolStripMenuItem.Name = "aplicacionToolStripMenuItem";
-            this.aplicacionToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.aplicacionToolStripMenuItem.Size = new System.Drawing.Size(79, 21);
             this.aplicacionToolStripMenuItem.Text = "Aplicacion";
-            // 
-            // mnuSalir
-            // 
-            this.mnuSalir.Name = "mnuSalir";
-            this.mnuSalir.Size = new System.Drawing.Size(180, 22);
-            this.mnuSalir.Text = "Salir";
             // 
             // mnuInicio
             // 
             this.mnuInicio.Name = "mnuInicio";
-            this.mnuInicio.Size = new System.Drawing.Size(180, 22);
+            this.mnuInicio.Size = new System.Drawing.Size(187, 24);
             this.mnuInicio.Text = "Inicio";
             this.mnuInicio.Click += new System.EventHandler(this.mnuInicio_Click);
             // 
             // mnuParo
             // 
             this.mnuParo.Name = "mnuParo";
-            this.mnuParo.Size = new System.Drawing.Size(180, 22);
+            this.mnuParo.Size = new System.Drawing.Size(187, 24);
             this.mnuParo.Text = "Paro";
             // 
             // timer1
@@ -91,17 +93,27 @@
             this.timer1.Interval = 5;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // stateLabel
+            // 
+            this.stateLabel.AutoSize = true;
+            this.stateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stateLabel.Location = new System.Drawing.Point(26, 50);
+            this.stateLabel.Name = "stateLabel";
+            this.stateLabel.Size = new System.Drawing.Size(97, 25);
+            this.stateLabel.TabIndex = 1;
+            this.stateLabel.Text = "Estado ->";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(788, 547);
+            this.Controls.Add(this.stateLabel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Maquina de estados finitos";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -119,6 +131,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuInicio;
         private System.Windows.Forms.ToolStripMenuItem mnuParo;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label stateLabel;
     }
 }
 

@@ -17,11 +17,16 @@ namespace Arquitectura
         public S_objeto[] ListaObjetos = new S_objeto[10];
         public S_objeto MiBateria;
 
+        int last_estado;
+
         public Form1()
         {
            
             InitializeComponent();
-            
+
+            last_estado = maquina.EstadoM;
+            this.stateLabel.Text = "Estado ->" + last_estado;
+
             Random random = new Random();
 
             for (int n = 0; n < 10; n++)
@@ -46,24 +51,19 @@ namespace Arquitectura
                 e.Graphics.DrawRectangle(Pens.Black, maquina.CoordX - 4, maquina.CoordY - 4, 8, 8);
             else
                 e.Graphics.DrawRectangle(Pens.Green, maquina.CoordX - 4, maquina.CoordY - 4, 8, 8);
+
             for (int n=0;n<10;n++)
                 if(ListaObjetos[n].activo==true)
                     e.Graphics.DrawRectangle(Pens.Indigo, ListaObjetos[n].x - 4, ListaObjetos[n].y - 4, 8, 8);
 
-            e.Graphics.DrawRectangle(Pens.IndianRed, MiBateria.x - 4, MiBateria.y - 4, 8, 8);
-
-            e.Graphics.DrawString("Estado -> "+maquina.EstadoM.ToString() , fuente, brocha, 10, 10);
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            e.Graphics.DrawRectangle(Pens.IndianRed, MiBateria.x - 4, MiBateria.y - 4, 8, 8);       
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void mnuInicio_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
@@ -75,7 +75,14 @@ namespace Arquitectura
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            maquina.Control();
+            this.Invalidate();
 
+            if (last_estado != maquina.EstadoM)
+            {
+                this.stateLabel.Text = "Estado ->" + maquina.EstadoM;
+            }
         }
+
     }
 }

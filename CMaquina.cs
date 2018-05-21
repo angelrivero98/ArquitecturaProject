@@ -61,6 +61,7 @@ namespace Arquitectura
             bateria = Pbateria;
 
         }
+
         public void Control()
         {
             switch (Estado)

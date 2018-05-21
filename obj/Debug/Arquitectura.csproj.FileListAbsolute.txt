@@ -8,3 +8,13 @@ C:\Users\Angel\Documents\Arquitectura\Arquitectura\bin\Debug\Arquitectura.exe
 C:\Users\Angel\Documents\Arquitectura\Arquitectura\bin\Debug\Arquitectura.pdb
 C:\Users\Angel\Documents\Arquitectura\Arquitectura\obj\Debug\Arquitectura.exe
 C:\Users\Angel\Documents\Arquitectura\Arquitectura\obj\Debug\Arquitectura.pdb
+D:\juan_\Documents\Ucab\6to Semestre\Arquitectura del computador\ProyectoArquitectura\bin\Debug\Arquitectura.exe.config
+D:\juan_\Documents\Ucab\6to Semestre\Arquitectura del computador\ProyectoArquitectura\bin\Debug\Arquitectura.exe
+D:\juan_\Documents\Ucab\6to Semestre\Arquitectura del computador\ProyectoArquitectura\bin\Debug\Arquitectura.pdb
+D:\juan_\Documents\Ucab\6to Semestre\Arquitectura del computador\ProyectoArquitectura\obj\Debug\Arquitectura.csprojAssemblyReference.cache
+D:\juan_\Documents\Ucab\6to Semestre\Arquitectura del computador\ProyectoArquitectura\obj\Debug\Arquitectura.Form1.resources
+D:\juan_\Documents\Ucab\6to Semestre\Arquitectura del computador\ProyectoArquitectura\obj\Debug\Arquitectura.Properties.Resources.resources
+D:\juan_\Documents\Ucab\6to Semestre\Arquitectura del computador\ProyectoArquitectura\obj\Debug\Arquitectura.csproj.GenerateResource.cache
+D:\juan_\Documents\Ucab\6to Semestre\Arquitectura del computador\ProyectoArquitectura\obj\Debug\Arquitectura.csproj.CoreCompileInputs.cache
+D:\juan_\Documents\Ucab\6to Semestre\Arquitectura del computador\ProyectoArquitectura\obj\Debug\Arquitectura.exe
+D:\juan_\Documents\Ucab\6to Semestre\Arquitectura del computador\ProyectoArquitectura\obj\Debug\Arquitectura.pdb
