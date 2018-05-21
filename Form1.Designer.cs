@@ -36,7 +36,7 @@
             this.mnuInicio = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuParo = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.stateLabel = new System.Windows.Forms.Label();
+            this.stateList = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             this.aplicacionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(788, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(949, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -63,7 +63,7 @@
             // mnuSalir
             // 
             this.mnuSalir.Name = "mnuSalir";
-            this.mnuSalir.Size = new System.Drawing.Size(187, 24);
+            this.mnuSalir.Size = new System.Drawing.Size(102, 24);
             this.mnuSalir.Text = "Salir";
             // 
             // aplicacionToolStripMenuItem
@@ -78,14 +78,14 @@
             // mnuInicio
             // 
             this.mnuInicio.Name = "mnuInicio";
-            this.mnuInicio.Size = new System.Drawing.Size(187, 24);
+            this.mnuInicio.Size = new System.Drawing.Size(107, 24);
             this.mnuInicio.Text = "Inicio";
             this.mnuInicio.Click += new System.EventHandler(this.mnuInicio_Click);
             // 
             // mnuParo
             // 
             this.mnuParo.Name = "mnuParo";
-            this.mnuParo.Size = new System.Drawing.Size(187, 24);
+            this.mnuParo.Size = new System.Drawing.Size(107, 24);
             this.mnuParo.Text = "Paro";
             // 
             // timer1
@@ -93,23 +93,21 @@
             this.timer1.Interval = 5;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // stateLabel
+            // stateList
             // 
-            this.stateLabel.AutoSize = true;
-            this.stateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stateLabel.Location = new System.Drawing.Point(26, 50);
-            this.stateLabel.Name = "stateLabel";
-            this.stateLabel.Size = new System.Drawing.Size(97, 25);
-            this.stateLabel.TabIndex = 1;
-            this.stateLabel.Text = "Estado ->";
+            this.stateList.FormattingEnabled = true;
+            this.stateList.Location = new System.Drawing.Point(767, 37);
+            this.stateList.Name = "stateList";
+            this.stateList.Size = new System.Drawing.Size(170, 485);
+            this.stateList.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(788, 547);
-            this.Controls.Add(this.stateLabel);
+            this.ClientSize = new System.Drawing.Size(949, 547);
+            this.Controls.Add(this.stateList);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -131,7 +129,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuInicio;
         private System.Windows.Forms.ToolStripMenuItem mnuParo;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label stateLabel;
+        private System.Windows.Forms.ListBox stateList;
     }
 }
 

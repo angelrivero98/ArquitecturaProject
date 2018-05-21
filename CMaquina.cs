@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Arquitectura
@@ -25,18 +27,20 @@ namespace Arquitectura
 
         private int Estado;
         private int x, y;
-        private S_objeto[] objetos = new S_objeto[10];
+        private S_objeto[] objetos;
         private S_objeto bateria;
 
         private int indice;
 
         private int energia;
 
-        public CMaquina()
+        public CMaquina(int x, int y, S_objeto[] objetos, S_objeto bateria)
         {
-            Estado = (int)estados.NBUSQUEDA;
-            x = 320;
-            y = 240;
+            Estado = (int)estados.NBUSQUEDA;      
+            this.x = x;
+            this.y = y;
+            this.objetos = objetos;
+            this.bateria = bateria;
             indice = -1;
             energia = 800;
 
@@ -53,13 +57,6 @@ namespace Arquitectura
         public int EstadoM
         {
             get { return Estado; }
-        }
-
-        public void Inicializa(ref S_objeto [] Pobjetos, S_objeto Pbateria)
-        {
-            objetos = Pobjetos;
-            bateria = Pbateria;
-
         }
 
         public void Control()
@@ -129,12 +126,33 @@ namespace Arquitectura
 
         public void NuevaBusqueda()
         {
-            indice = -1;
+            int activo_count = 0;
             for(int n = 0; n < 10; n++)
             {
                 if (objetos[n].activo == true)
-                    indice = n;
+                {
+                    activo_count++;
+                }
+            }
+            if (activo_count == 0)
+            {
+                indice = -1;
+                return;
+            }
+            Console.WriteLine("Activos: " + activo_count);
+            Random random = new Random();
+            int skip_index = random.Next(0, activo_count);
 
+
+            for (int n = 0, skip = 0; n < 10; n++)
+            {
+                if (objetos[n].activo == true)
+                {
+                    if (skip++ == skip_index)
+                    {
+                        indice = n;
+                    }
+                }
             }
         }
 
