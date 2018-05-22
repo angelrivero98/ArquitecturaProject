@@ -13,6 +13,11 @@ namespace Arquitectura
 {
     public partial class Form1 : Form
     {
+        public Image corredor = Image.FromFile("C:/Users/Angel/Documents/ProyectoArquitectura-competencia/Properties/corredor.png");
+        public Image bateria = Image.FromFile("C:/Users/Angel/Documents/ProyectoArquitectura-competencia/Properties/pila.png");
+        public Image dot = Image.FromFile("C:/Users/Angel/Documents/ProyectoArquitectura-competencia/Properties/dot.png");
+        public Image dead = Image.FromFile("C:/Users/Angel/Documents/ProyectoArquitectura-competencia/Properties/X.png");
+           
         public int CANTIDAD_DE_MAQUINAS = 2;
         private List<CMaquina> maquinas = new List<CMaquina>();
 
@@ -24,7 +29,8 @@ namespace Arquitectura
             InitializeComponent();
 
             Random random = new Random();
-
+            
+           timer1.Interval = 15;
             for (int n = 0; n < 10; n++)
             {
                 //639
@@ -50,15 +56,18 @@ namespace Arquitectura
 
 
         private void PaintMaquina(CMaquina maquina, PaintEventArgs e)
-        {       
+        {     
+            
+           
             if (maquina.EstadoM == (int)CMaquina.estados.MUERTO)
-                e.Graphics.DrawRectangle(Pens.Black, maquina.CoordX - 4, maquina.CoordY - 4, 8, 8);
+                e.Graphics.DrawImage(dead,maquina.CoordX-4,maquina.CoordY-4,16,16);
             else
-                e.Graphics.DrawRectangle(Pens.Green, maquina.CoordX - 4, maquina.CoordY - 4, 8, 8);
+              e.Graphics.DrawImage(corredor,maquina.CoordX-4,maquina.CoordY-4,32,32);
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
-        {                   
+        {   
+            
             foreach (var maquina in maquinas)
             {
                 PaintMaquina(maquina, e);
@@ -66,9 +75,9 @@ namespace Arquitectura
 
             for (int n=0;n<10;n++)
                 if(ListaObjetos[n].activo==true)
-                    e.Graphics.DrawRectangle(Pens.Indigo, ListaObjetos[n].x - 4, ListaObjetos[n].y - 4, 8, 8);
+                    e.Graphics.DrawImage(dot, ListaObjetos[n].x - 4, ListaObjetos[n].y - 4, 32, 32);
 
-            e.Graphics.DrawRectangle(Pens.IndianRed, MiBateria.x - 4, MiBateria.y - 4, 8, 8);       
+            e.Graphics.DrawImage(bateria, MiBateria.x - 4, MiBateria.y - 4, 32, 32);       
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
