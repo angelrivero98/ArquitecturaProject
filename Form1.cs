@@ -13,10 +13,10 @@ namespace Arquitectura
 {
     public partial class Form1 : Form
     {
-        public Image corredor = Image.FromFile("C:/Users/Angel/Documents/ProyectoArquitectura-competencia/Properties/corredor.png");
-        public Image bateria = Image.FromFile("C:/Users/Angel/Documents/ProyectoArquitectura-competencia/Properties/pila.png");
-        public Image dot = Image.FromFile("C:/Users/Angel/Documents/ProyectoArquitectura-competencia/Properties/dot.png");
-        public Image dead = Image.FromFile("C:/Users/Angel/Documents/ProyectoArquitectura-competencia/Properties/X.png");
+        public Image corredor = Image.FromFile(@"Images\corredor.png");
+        public Image bateria = Image.FromFile(@"Images\pila.png");
+        public Image dot = Image.FromFile(@"Images\dot.png");
+        public Image dead = Image.FromFile(@"Images\X.png");
            
         public int CANTIDAD_DE_MAQUINAS = 2;
         private List<CMaquina> maquinas = new List<CMaquina>();
@@ -105,8 +105,6 @@ namespace Arquitectura
             }
 
             this.Invalidate();
-
-            
         }
 
     }

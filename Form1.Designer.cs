@@ -95,10 +95,12 @@
             // 
             // stateList
             // 
+            this.stateList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.69307F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stateList.FormattingEnabled = true;
+            this.stateList.ItemHeight = 18;
             this.stateList.Location = new System.Drawing.Point(767, 37);
             this.stateList.Name = "stateList";
-            this.stateList.Size = new System.Drawing.Size(170, 485);
+            this.stateList.Size = new System.Drawing.Size(170, 472);
             this.stateList.TabIndex = 2;
             // 
             // Form1
