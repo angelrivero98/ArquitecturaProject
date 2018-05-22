@@ -60,7 +60,7 @@ namespace Arquitectura
             
            
             if (maquina.EstadoM == (int)CMaquina.estados.MUERTO)
-                e.Graphics.DrawImage(dead,maquina.CoordX-4,maquina.CoordY-4,16,16);
+                e.Graphics.DrawImage(dead,maquina.CoordX-4,maquina.CoordY-4,32,32);
             else
               e.Graphics.DrawImage(corredor,maquina.CoordX-4,maquina.CoordY-4,32,32);
         }
