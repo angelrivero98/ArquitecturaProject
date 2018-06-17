@@ -16,21 +16,34 @@ namespace Arquitectura
         public Image corredor = Image.FromFile(@"Images\corredor.png");
         public Image bateria = Image.FromFile(@"Images\pila.png");
         public Image dot = Image.FromFile(@"Images\dot.png");
-        public Image dead = Image.FromFile(@"Images\X.png");
-           
+        public Image dead = Image.FromFile(@"Images\x.png");
+        public Image campoBg = Image.FromFile(@"Images\campo1.png");
+        public Image ballImg = Image.FromFile(@"Images\ball.png");
+
+        private PictureBox campo = new PictureBox();
+
         public int CANTIDAD_DE_MAQUINAS = 2;
         private List<CMaquina> maquinas = new List<CMaquina>();
 
         public S_objeto[] ListaObjetos = new S_objeto[10];
         public S_objeto MiBateria;
 
+        Pelota pelota;
+        Jugador jHome, jAway;
+
         public Form1()
         { 
             InitializeComponent();
-
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            Console.WriteLine(this.Width);
             Random random = new Random();
-            
-           timer1.Interval = 15;
+
+            this.pelota = new Pelota(this.Width / 2, this.Height / 2 , 40);
+            this.jHome = new Jugador(this.Width / 2 - 300, this.Height / 2, pelota, Jugador.Estado.SIN_BALON, random, this.Width, this.Height, Jugador.Direccion.DERECHA);
+            this.jAway = new Jugador(this.Width / 2 + 230, this.Height / 2, pelota, Jugador.Estado.SIN_BALON, random, this.Width, this.Height, Jugador.Direccion.IZQUIERDA);
+
+            timer1.Interval = 15;
             for (int n = 0; n < 10; n++)
             {
                 //639
@@ -54,11 +67,8 @@ namespace Arquitectura
                             
         }
 
-
         private void PaintMaquina(CMaquina maquina, PaintEventArgs e)
-        {     
-            
-           
+        {              
             if (maquina.EstadoM == (int)CMaquina.estados.MUERTO)
                 e.Graphics.DrawImage(dead,maquina.CoordX-4,maquina.CoordY-4,32,32);
             else
@@ -66,18 +76,11 @@ namespace Arquitectura
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
-        {   
-            
-            foreach (var maquina in maquinas)
-            {
-                PaintMaquina(maquina, e);
-            }
+        {
+            e.Graphics.DrawImage(ballImg, pelota.x, pelota.y);
+            e.Graphics.DrawImage(corredor, jHome.x, jHome.y, 32, 32);
+            e.Graphics.DrawImage(corredor, jAway.x, jAway.y, 32, 32);
 
-            for (int n=0;n<10;n++)
-                if(ListaObjetos[n].activo==true)
-                    e.Graphics.DrawImage(dot, ListaObjetos[n].x - 4, ListaObjetos[n].y - 4, 32, 32);
-
-            e.Graphics.DrawImage(bateria, MiBateria.x - 4, MiBateria.y - 4, 32, 32);       
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
@@ -96,14 +99,9 @@ namespace Arquitectura
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int i = 0;
-            foreach (var maquina in maquinas)
-            {
-                maquina.Control();
-                stateList.Items[i] = String.Format("Estado{0} -> {1}", i, maquina.EstadoM);
-                i++;
-            }
-
+            pelota.Control();
+            jHome.Control();
+            jAway.Control();
             this.Invalidate();
         }
 
