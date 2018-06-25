@@ -38,6 +38,7 @@
             this.mnuParo = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.stateList = new System.Windows.Forms.ListBox();
+            this.legTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +105,11 @@
             this.stateList.Size = new System.Drawing.Size(170, 472);
             this.stateList.TabIndex = 2;
             // 
+            // legTimer
+            // 
+            this.legTimer.Interval = 400;
+            this.legTimer.Tick += new System.EventHandler(this.legTimer_Tick_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,6 +143,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuParo;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ListBox stateList;
+        private System.Windows.Forms.Timer legTimer;
     }
 }
 

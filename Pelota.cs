@@ -40,7 +40,7 @@ namespace Arquitectura
         {
             if (objetivo == null)
                 return;
-
+            
             var tx = objetivo.x;
             var ty = objetivo.y;
 

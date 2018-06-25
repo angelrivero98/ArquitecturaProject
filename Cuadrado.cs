@@ -19,7 +19,7 @@ namespace Arquitectura
 
         public bool Contiene(int tx, int ty)
         {
-            return tx <= this.x + this.alto && ty < this.y + this.alto && tx >= this.x && ty >= this.y;
+            return tx <= this.x + this.alto && ty <= this.y + this.alto && tx >= this.x && ty >= this.y;
         }
 
         public static Boolean areTheSame(Cuadrado c1, Cuadrado c2)
